@@ -1,0 +1,210 @@
+/* IMPORTAMOS FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    
+    margin: 0;
+    font-family: 'Suez One', serif;
+}
+
+body {
+    background-image: url("/images/fondo.jpg");
+}
+
+
+/* ESTILOS MENU LATERAL */
+.menu-lateral {
+    -webkit-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+    box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+
+
+    background-color: #FFECCE;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: auto;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+
+.menu-lateral::-webkit-scrollbar,
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.lateral {
+    min-width: 250px;
+    max-width: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+
+}
+
+.menu-movil {
+    display: none;
+}
+
+.seleccionado{
+    filter: drop-shadow(-2px 2px 15px black)
+}
+
+/* IMAGEN DEL MENU LATERAL */
+.imagen-menu {
+
+    width: 80px;
+    height: 80px;
+    padding: 50px;
+}
+
+.imagen-menu:hover {
+    transform: rotate(20deg);
+    transition-duration: 0.5s;
+}
+
+.imagen-menu-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.caja-logo {
+
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: rgb(33, 33, 33);
+
+}
+
+.enlace-recetas{
+    text-decoration:none;
+    color: black;
+}
+
+/* ESTILO CHECK */
+.btn-nav {
+    color: var(--main-color);
+    font-size: 50px;
+    cursor: pointer;
+    padding: 3%;
+    background: rgba(0, 0, 0, .1);
+}
+
+#btn-nav {
+    display: none;
+}
+
+#btn-nav:checked~.lateral {
+    display: flex;
+}
+
+.movil-cont {
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    min-height: 150px;
+}
+
+.movil-cont img {
+    width: 100px;
+    height: 50;
+}
+
+/* DISEÑO CUERPO PRINCIPAL */
+
+main{
+    overflow: auto;
+    margin-left: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 25vh;
+    
+}
+
+.img-contribuidor{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.caja-contribuidor{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ffecce82;
+    padding: 20px 40px;
+}
+
+.caja-contribuidor img{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.caja-contribuidor h2{
+    font-size: 40px;
+    
+}
+
+.caja-contribuidor a{
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.alber{
+    width: 240px;
+}
+
+/* DISEÑO DE MOVIL */
+@media (max-width: 1150px) {
+
+    /* DISEÑO MENU MOVIL */
+    .lateral {
+        margin-top: 150px;
+    }
+
+    .menu-movil {
+        display: flex;
+        width: 100%;
+    }
+
+    .caja-contribuidor a{
+        margin-top: 20px;
+        margin: 0px 10%;
+    }
+
+    main {
+        margin-left: 0px;
+        margin-top: 0px;
+        flex-direction: column;
+    }
+
+    .caja-contribuidor{
+        margin: 0px 50px;
+    }
+
+    .ocultar {
+        display: none;
+    }
+    
+}

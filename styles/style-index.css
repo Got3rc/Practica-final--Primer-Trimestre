@@ -1,0 +1,237 @@
+/* IMPORTAMOS FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+
+
+/* DECLARAMOS ANIMACIONES */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Suez One', serif;
+}
+
+body {
+    background-image: url("/images/fondo.jpg");
+}
+
+
+/* ESTILOS MENU LATERAL */
+.menu-lateral {
+    -webkit-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+    box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+
+
+    background-color: #FFECCE;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: auto;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+
+.menu-lateral::-webkit-scrollbar,
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.lateral {
+    min-width: 250px;
+    max-width: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+
+}
+
+.menu-movil {
+    display: none;
+}
+
+.seleccionado{
+    filter: drop-shadow(-2px 2px 15px black)
+}
+
+/* IMAGEN DEL MENU LATERAL */
+.imagen-menu {
+
+    width: 80px;
+    height: 80px;
+    padding: 50px;
+}
+
+.imagen-menu:hover {
+    transform: rotate(20deg);
+    transition-duration: 0.5s;
+}
+
+.imagen-menu-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.caja-logo {
+
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: rgb(33, 33, 33);
+
+}
+
+.enlace-recetas{
+    text-decoration:none;
+    color: black;
+}
+
+/* ESTILO CHECK */
+.btn-nav {
+    color: var(--main-color);
+    font-size: 50px;
+    cursor: pointer;
+    padding: 3%;
+    background: rgba(0, 0, 0, .1);
+}
+
+#btn-nav {
+    display: none;
+}
+
+#btn-nav:checked~.lateral {
+    display: flex;
+}
+
+.movil-cont {
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    min-height: 150px;
+}
+
+.movil-cont img {
+    width: 100px;
+    height: 50;
+}
+
+/* DISEÑO CUERPO PRINCIPAL */
+main {
+    margin-left: 250px;
+    height: 100vh;
+    overflow: auto;
+    display: grid;
+    grid-template-areas: "titulo1 titulo1"
+                         "titulo2 titulo2"
+                         " titulo3 burger";
+}
+
+h1,h2{
+    text-shadow: 10px 10px 10px #ffffff;
+}
+
+.titulo1 , .titulo2 , .titulo3{
+    font-size: calc(2.5em + 2.5vw);
+}
+
+.titulo1{
+    margin-top: 6rem;
+    grid-area: titulo1;
+    text-align: center;
+    animation: slideInFromLeft 1.5s ease-out;
+}
+
+.titulo2{
+    grid-area: titulo2;
+    text-align: center;
+    animation: slideInFromLeft 2s ease-out;
+}
+
+.titulo3{
+    grid-area: titulo3;
+    margin-top: 12rem;
+    margin-left: 20rem;
+    font-size: calc(2em + 2vw);
+    animation: slideInFromLeft 1.5s ease-out, bounce 2s 1.5s infinite; 
+}
+
+.taxi-burger {
+    grid-area: burger;
+    width: 500px;
+    height: 500px;
+    
+}
+
+/* DISEÑO DE MOVIL */
+@media (max-width: 800px) {
+
+    /* DISEÑO MENU MOVIL */
+    .lateral {
+        margin-top: 150px;
+    }
+
+    .menu-movil {
+        display: flex;
+        width: 100%;
+    }
+
+    main {
+        margin-left: 0px;
+    }
+
+    .taxi-burger{
+        width: 300px;
+        height: 300px;
+    }
+
+    .ocultar {
+        display: none;
+    }
+}
+
+@media (max-width: 1600px){
+    main{
+        display: block;
+    }
+
+    .titulo1, .titulo2 , .titulo3,.taxi-burger-contenedor{
+        text-align: center;
+    }
+
+    .titulo3{
+        margin: 0px;
+    }
+
+}

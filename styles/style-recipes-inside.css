@@ -1,0 +1,274 @@
+/* IMPORTAMOS FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+
+
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Suez One', serif;
+}
+
+body {
+    background-image: url("/images/fondo.jpg");
+}
+
+
+/* ESTILOS MENU LATERAL */
+.menu-lateral {
+    -webkit-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+    box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.48);
+
+
+    background-color: #FFECCE;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: auto;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+
+.menu-lateral::-webkit-scrollbar,
+main::-webkit-scrollbar,.caja-receta::-webkit-scrollbar {
+    display: none;
+}
+
+.lateral {
+    min-width: 250px;
+    max-width: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+
+}
+
+.menu-movil {
+    display: none;
+}
+
+.seleccionado {
+    filter: drop-shadow(-2px 2px 15px black)
+}
+
+/* IMAGEN DEL MENU LATERAL */
+.imagen-menu {
+
+    width: 80px;
+    height: 80px;
+    padding: 50px;
+}
+
+.imagen-menu:hover {
+    transform: rotate(20deg);
+    transition-duration: 0.5s;
+}
+
+.imagen-menu-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.caja-logo {
+
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: rgb(33, 33, 33);
+
+}
+
+.enlace-recetas {
+    text-decoration: none;
+    color: black;
+}
+
+/* ESTILO CHECK */
+.btn-nav {
+    color: var(--main-color);
+    font-size: 50px;
+    cursor: pointer;
+    padding: 3%;
+    background: rgba(0, 0, 0, .1);
+}
+
+#btn-nav {
+    display: none;
+}
+
+#btn-nav:checked~.lateral {
+    display: flex;
+}
+
+.movil-cont {
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    min-height: 150px;
+}
+
+.movil-cont img {
+    width: 100px;
+    height: 50;
+}
+
+
+/* DISEÑO PAGINA */
+main {
+    margin-left: 250px;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.img-burger {
+    width: 90%;
+    height: 80%;
+}
+
+.texto-burger {
+    margin-top: 5%;
+}
+
+.polaroid {
+    margin-top: 10%;
+    text-align: center;
+    width: 30%;
+    height: 550px;
+    background-color: rgb(237, 237, 237);
+    padding: 30px 10px 0px 10px;
+    border: 1px solid #BFBFBF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+
+ol,ul {
+    list-style: none;
+}
+
+.caja-receta {
+    background-color: rgb(237, 237, 237);
+    text-align: justify;
+    width: 50%;
+    height: 700px;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding:5%;
+    font-size: 1vw;
+}
+
+.center{
+    text-align: center;
+}
+
+.descrip{
+    margin-top: 20px;
+}
+
+.right{
+    text-align: right;
+}
+
+.img-burger-inside{
+    display: none;
+}
+
+/* DISEÑO DE MOVIL */
+@media (max-width: 1500px){
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-burger-inside{
+        display: block;
+        width: 200px;
+        height: 200px;
+        float: right;
+        border-radius: 20px;
+        box-shadow: 10px 10px 5px;
+    }
+
+    .polaroid{
+        display: none;
+    }
+    .caja-receta{
+        width: 80%;
+        height: 800px;
+        margin-bottom: 50px;
+        font-size: 1.5vw;
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    /* DISEÑO MENU MOVIL */
+    .lateral {
+        margin-top: 150px;
+    }
+
+    .caja-receta{
+        font-size: 1.8vw;
+    }
+
+    .menu-movil {
+        display: flex;
+        width: 100%;
+    }
+
+    .img-burger {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    main {
+        margin-left: 0px;
+
+    }
+
+    .ocultar {
+        display: none;
+    }
+}
+
+@media (max-width: 900px){
+    .img-burger-inside{
+        width: 300px;
+        height: 300px;
+        float: none;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    .caja-receta{
+        overflow: auto;
+        display: block;
+        align-items: stretch;
+        font-size: 2vh;
+        margin-top: 20px;
+        height: 1000px;
+        word-break:break-all;
+    }
+    
+
+
+}
